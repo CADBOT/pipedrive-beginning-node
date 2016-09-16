@@ -1,0 +1,8 @@
+I want you to make two library files
+
+One of the library files should use module.exports (export one thing)
+The other library file should use exports (export multiple things)
+
+go to the npm website
+find a module that looks interesting, install it, and also try it out
+in your client

@@ -1,0 +1,16 @@
+{
+  "name": "cadbot-demo",
+  "version": "1.0.0",
+  "description": "a demo npm module",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "CADBOT",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^3.0.2"
+  }
+}
