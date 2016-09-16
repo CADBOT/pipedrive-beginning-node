@@ -18,11 +18,6 @@ fs.readFile('./simple-async.js', function(err, data) {
 fs.readFile('./simple-async.js', function(err, data) {
 })
 
-while (true) {
-
-}
-
-
 // We start out in the main context. Run code until we run out
 //
 // Event loop (queue) is going to queue up with call backs
@@ -32,3 +27,32 @@ while (true) {
 //
 // LAB: Read in one file. After that file has finished reading, read in a second file
 //      ADV make sure the file exists using fs.exist, then if it does exist read it in.
+// SOLUTION
+//
+console.log(1)
+function otherWork() {
+  console.log(3)
+}
+
+function main() {
+  fs.readFile('./file1.txt', function(err, data) {
+    console.log(4)
+    if (err) {
+        return console.log(err) // early return to cutoff rest of function
+    }
+    console.log(data.toString())
+    fs.readFile('./file2.txt', function(err, data) {
+      console.log(6)
+      if (err) {
+        return console.log(err)
+      }
+      console.log(data.toString())
+      console.log(7)
+    })
+    console.log(5)
+  })
+  console.log(2) 
+  otherWork()
+}
+
+main()
